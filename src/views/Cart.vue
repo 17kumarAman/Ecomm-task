@@ -7,7 +7,12 @@
       <div v-if="loading" class="mt-4 text-white -600">Loading...</div>
       <div v-else>
         <div v-if="cartItems.length === 0" class="mt-4 text-gray-600">
-          Your cart is empty.
+          Your cart is empty.<router-link
+            class="text-red-500 hover:underline"
+            to="/cart"
+          >
+            Goto Cart
+          </router-link>
         </div>
         <div v-else>
           <div
@@ -17,12 +22,12 @@
           >
             <div class="flex-shrink-0">
               <router-link :to="'/item/' + item.item_name">
-              <img
-                :src="baseUrl + item.image"
-                :alt="item.title"
-                class="w-40 h-fit"
-              />
-            </router-link>
+                <img
+                  :src="baseUrl + item.image"
+                  :alt="item.title"
+                  class="w-40 h-fit"
+                />
+              </router-link>
             </div>
             <div class="flex flex-col flex-grow ml-4">
               <h3 class="text-2xl font-bold text-white">
@@ -46,17 +51,12 @@
               <span class="text-sm font-medium text-white">{{
                 item.price
               }}</span>
-              
             </div>
           </div>
           <div class="mt-8 flex justify-between items-center">
             <button class="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm">
               Proceed to Checkout
             </button>
-
-            <router-link class="text-red-500 hover:underline" to="/cart">
-              Goto Cart
-            </router-link>
           </div>
         </div>
       </div>
@@ -89,7 +89,6 @@ async function fetchCartItems() {
       }
     );
     cartItems.value = response.data.data.items;
-    console.log((cartItems.value[2]));
     loading.value = false;
   } catch (error) {
     console.error("Error fetching cart items:", error);
@@ -98,7 +97,5 @@ async function fetchCartItems() {
 }
 
 // Call fetchCartItems when the component is mounted
-onMounted( async()=> await fetchCartItems());
-
-
+onMounted(async () => await fetchCartItems());
 </script>

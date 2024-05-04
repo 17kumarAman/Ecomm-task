@@ -65,12 +65,16 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router"; // Import useRouter
 
 // Reactive variables for name, email, password, and loading state
 const name = ref("");
 const email = ref("");
 const password = ref("");
 const loading = ref(false);
+const router = useRouter();
+// Base URL for API requests
+const baseUrl = "https://qmph.nesscale.com";
 
 // Signup function to handle form submission
 const signup = async () => {
@@ -99,6 +103,8 @@ const signup = async () => {
     email.value = "";
     password.value = "";
     loading.value = false;
+    alert('signup succesfully login now')
+    router.push("/login");
     return response;
   } catch (error) {
     // Handle error cases

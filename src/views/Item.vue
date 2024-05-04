@@ -40,11 +40,6 @@ const item = ref(null);
 const baseUrl = "https://qmph.nesscale.com";
 const itemName = useRouter().currentRoute.value.params.name;
 
-// Retrieve key details from local storage
-const keyDetails = JSON.parse(localStorage.getItem("key_details"));
-const apiKey = keyDetails.api_key;
-const apiSecret = keyDetails.api_secret;
-
 // Function to fetch item details
 async function getItem() {
   try {
@@ -67,6 +62,9 @@ async function getItem() {
 
 // Function to add item to cart
 async function addToCart(element) {
+  // Retrieve key details from local storage
+  const keyDetails = JSON.parse(localStorage.getItem("key_details"));
+
   try {
     loading.value = true;
     const response = await axios.post(
@@ -74,7 +72,7 @@ async function addToCart(element) {
       { item_code: `${element}`, qty: "2" },
       {
         headers: {
-          Authorization: `token ${apiKey}:${apiSecret}`,
+          Authorization: `token ${keyDetails.api_key}:${keyDetails.api_secret}`,
         },
       }
     );

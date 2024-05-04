@@ -39,16 +39,16 @@
       </p>
     </div>
 
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="flex flex-col md:flex-row">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-48 py-20 ">
+      <div class="flex flex-col md:flex-row gap-x-40">
         <div class="md:w-1/3">
-          <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image" class="w-full md:h-auto object-cover bg-fixed" />
+          <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image" class="w-fit md:h-auto object-cover bg-fixed" />
         </div>
         <div class="overflow-hidden md:flex-1 md:ml-20 mt-8 md:mt-0">
           <div class="h-96 md:h-auto overflow-y-auto no-scrollbar">
             <!-- Cards or content inside second div (Columbus) -->
-            <div v-for="(item, index) in 4" :key="index" class="w-full md:w-80 md:h-80 text-white shadow-lg rounded-lg mx-6 my-4 bg-gray-700">
-              <div class="text-center uppercase text-xl font-bold mb-4">{{ index + 1 | addZero }}</div>
+            <div v-for="(item, index) in 5" :key="index" class="w-full md:w-80 md:h-80 text-white shadow-lg rounded-lg mx-6 my-4 bg-gray-700">
+              <div class="text-center uppercase text-xl font-bold mb-4">{{ index + 1  }}</div>
               <div class="text-center mb-4">
                 <h2 class="text-2xl font-semibold">NextGen Marketplace</h2>
                 <p class="">

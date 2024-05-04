@@ -29,7 +29,7 @@
       </div>
 
       <!-- Mobile Menu Content -->
-      <div v-if="isMenuOpen" class="md:hidden bg-gray-700 p-4">
+      <div v-if="isMenuOpen" class="md:hidden bg-gray-700 p-4" @click='closeMobileMenu'>
         <router-link to="/" class="block text-white mb-2">Home</router-link>
         <router-link to="/shop" class="block text-white mb-2">Shop</router-link>
         <router-link to="/cart" class="block text-white mb-2">Cart</router-link>
