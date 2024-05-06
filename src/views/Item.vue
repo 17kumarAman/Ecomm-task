@@ -9,7 +9,7 @@
         :alt="item.name"
         class="w-fit h-60 object-cover mb-4 mx-auto"
       />
-      <h2 class="text-xl font-semibold mb-2">{{ item.name }}</h2>
+      <h2 class="text-xl text-gray-600 font-semibold mb-2">{{ item.name }}</h2>
       <p class="text-gray-600 text-sm mb-2">{{ item.description }}</p>
 
       <p class="text-lg font-semibold text-blue-500">${{ item.price }}</p>
@@ -52,6 +52,7 @@ async function getItem() {
     );
     // Set item details and update loading state
     item.value = response.data.data;
+    console.log(item.value.name)
     loading.value = false;
   } catch (error) {
     // Handle error cases

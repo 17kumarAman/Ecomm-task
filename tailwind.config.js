@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        banner: {
+          darker: "#25003E",
+          lighter: "#5316AF",
+        },
+      }
+      
+    },
   },
   plugins: [],
 }
